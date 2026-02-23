@@ -1,0 +1,24 @@
+{
+  "visual": {
+    "name": "ProductionPerfInterventions",
+    "displayName": "Production with Perforations and Interventions",
+    "guid": "productionPerfInterventionsVisual",
+    "visualClassName": "Visual",
+    "version": "1.0.0.0",
+    "description": "A multi-axis chart showing gas production (area), water cut (line), perforation intervals (box markers), and intervention events (circles/squares).",
+    "supportUrl": "https://github.com",
+    "gitHubUrl": ""
+  },
+  "apiVersion": "5.9.0",
+  "author": {
+    "name": "PBI SME",
+    "email": "pbisme@example.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": null,
+  "stringResources": []
+}

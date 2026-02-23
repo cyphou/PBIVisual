@@ -1,0 +1,131 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "Date",
+      "name": "dateField",
+      "kind": "Grouping",
+      "description": "Date/time field for the X-axis timeline"
+    },
+    {
+      "displayName": "Qgas (Gas Production)",
+      "name": "qgasField",
+      "kind": "Measure",
+      "description": "Gas production rate values (area chart)"
+    },
+    {
+      "displayName": "WCT (Water Cut)",
+      "name": "wctField",
+      "kind": "Measure",
+      "description": "Water cut fraction values (line chart)"
+    },
+    {
+      "displayName": "Perf Top Depth",
+      "name": "perfTopField",
+      "kind": "Measure",
+      "description": "Top depth of perforation interval (ft). Null when no perforation at this date."
+    },
+    {
+      "displayName": "Perf Bottom Depth",
+      "name": "perfBottomField",
+      "kind": "Measure",
+      "description": "Bottom depth of perforation interval (ft). Null when no perforation at this date."
+    },
+    {
+      "displayName": "Intervention Type",
+      "name": "interventionTypeField",
+      "kind": "Measure",
+      "description": "Type of intervention event: 1=Qgas event (orange circle), 2=WCT event (blue circle), 3=Other (red square). Null or 0 for no intervention."
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "categorical": {
+        "categories": {
+          "for": {
+            "in": "dateField"
+          },
+          "dataReductionAlgorithm": {
+            "top": {
+              "count": 30000
+            }
+          }
+        },
+        "values": {
+          "select": [
+            { "bind": { "to": "qgasField" } },
+            { "bind": { "to": "wctField" } },
+            { "bind": { "to": "perfTopField" } },
+            { "bind": { "to": "perfBottomField" } },
+            { "bind": { "to": "interventionTypeField" } }
+          ]
+        }
+      }
+    }
+  ],
+  "objects": {
+    "chartSettings": {
+      "displayName": "Chart Settings",
+      "properties": {
+        "chartTitle": {
+          "displayName": "Title",
+          "type": { "text": true }
+        },
+        "qgasColor": {
+          "displayName": "Qgas Area Color",
+          "type": { "fill": { "solid": { "color": true } } }
+        },
+        "wctColor": {
+          "displayName": "WCT Line Color",
+          "type": { "fill": { "solid": { "color": true } } }
+        },
+        "perfColor": {
+          "displayName": "Perforation Box Color",
+          "type": { "fill": { "solid": { "color": true } } }
+        },
+        "qgasMarkerColor": {
+          "displayName": "Qgas Intervention Marker Color",
+          "type": { "fill": { "solid": { "color": true } } }
+        },
+        "wctMarkerColor": {
+          "displayName": "WCT Intervention Marker Color",
+          "type": { "fill": { "solid": { "color": true } } }
+        },
+        "otherMarkerColor": {
+          "displayName": "Other Intervention Marker Color",
+          "type": { "fill": { "solid": { "color": true } } }
+        },
+        "qgasUnit": {
+          "displayName": "Qgas Unit Label",
+          "type": { "text": true }
+        },
+        "wctUnit": {
+          "displayName": "WCT Unit Label",
+          "type": { "text": true }
+        },
+        "perfUnit": {
+          "displayName": "Perf Depth Unit Label",
+          "type": { "text": true }
+        }
+      }
+    }
+  },
+  "tooltips": {
+    "supportedTypes": {
+      "default": true,
+      "canvas": true
+    },
+    "roles": [
+      "dateField",
+      "qgasField",
+      "wctField",
+      "perfTopField",
+      "perfBottomField",
+      "interventionTypeField"
+    ]
+  },
+  "supportsHighlight": true,
+  "sorting": {
+    "default": {}
+  },
+  "privileges": []
+}

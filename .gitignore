@@ -1,0 +1,19 @@
+# Dependencies
+node_modules/
+
+# Build output
+.tmp/
+dist/
+
+# Webpack stats
+webpack.statistics.*.html
+
+# IDE
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Certificates (sensitive)
+pbiviz-certs/
